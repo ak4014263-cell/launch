@@ -15,6 +15,13 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         <activity android:name=".GameActivity" />
+        <!-- Ensure Unity activity does not create another launcher icon -->
+        <activity
+            android:name="com.unity3d.player.UnityPlayerActivity"
+            android:exported="false"
+            tools:node="merge">
+            <intent-filter tools:node="removeAll" />
+        </activity>
         <activity 
             android:name=".MainActivity"
             android:theme="@style/Theme.ArcLauncher.Launcher"
