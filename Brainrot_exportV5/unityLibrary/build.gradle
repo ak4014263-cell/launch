@@ -75,7 +75,9 @@ android {
     }
 
     aaptOptions {
-        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp'] + unityStreamingAssets.tokenize(', ')
+        def streamingAssets = (project.findProperty('unityStreamingAssets') ?: '').toString()
+        def extraNoCompress = streamingAssets ? streamingAssets.tokenize(',').collect { it.trim() } : []
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp'] + extraNoCompress
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
     }
 
