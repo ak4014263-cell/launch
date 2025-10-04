@@ -19,14 +19,21 @@ import com.example.launcher.ui.theme.ArcLauncherTheme
 
 class OnboardingActivity : ComponentActivity() {
 
+    private var currentScreen by mutableStateOf(0)
+    private var continueOnboardingAfterPermission: Boolean = false
+
     private val roleRequestLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         // After returning from role request, move forward if we are still on page 2
         requestRuntimePermissions()
     }
     private val permissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { _ ->
-        // After permissions flow, go to main activity
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
+        // After permissions flow, either continue onboarding or finish
+        if (continueOnboardingAfterPermission) {
+            currentScreen = 2
+        } else {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,8 +52,6 @@ class OnboardingActivity : ComponentActivity() {
     
     @Composable
     fun OnboardingFlow() {
-        var currentScreen by remember { mutableStateOf(0) }
-        
         when (currentScreen) {
             0 -> OnboardingScreen1(
                 onStartNowClick = {
@@ -55,6 +60,7 @@ class OnboardingActivity : ComponentActivity() {
             )
             1 -> OnboardingScreen2(
                 onSetDefaultClick = {
+                    continueOnboardingAfterPermission = true
                     requestSetDefaultLauncher()
                 }
             )
@@ -66,6 +72,7 @@ class OnboardingActivity : ComponentActivity() {
                     currentScreen = 1
                 },
                 onSkipToGameClick = {
+                    continueOnboardingAfterPermission = false
                     requestSetDefaultLauncher()
                 }
             )
@@ -74,17 +81,21 @@ class OnboardingActivity : ComponentActivity() {
                     currentScreen = 4
                 },
                 onSkipClick = {
+                    continueOnboardingAfterPermission = false
                     requestSetDefaultLauncher()
                 },
                 onSkipToGameClick = {
+                    continueOnboardingAfterPermission = false
                     requestSetDefaultLauncher()
                 }
             )
             4 -> AppTracerScreen2(
                 onContinueClick = {
+                    continueOnboardingAfterPermission = false
                     requestSetDefaultLauncher()
                 },
                 onSkipClick = {
+                    continueOnboardingAfterPermission = false
                     requestSetDefaultLauncher()
                 }
             )
@@ -106,8 +117,12 @@ class OnboardingActivity : ComponentActivity() {
             ActivityCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
         }
         if (toRequest.isEmpty()) {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            if (continueOnboardingAfterPermission) {
+                currentScreen = 2
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
             return
         }
         permissionsLauncher.launch(toRequest.toTypedArray())
