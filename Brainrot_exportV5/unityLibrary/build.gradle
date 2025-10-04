@@ -27,11 +27,12 @@ dependencies {
     implementation 'com.reyun.solar.engine.oversea:solar-engine-core:+' // Assets/SolarEngineNet/Android/Editor/Dependencies.xml:8
     implementation 'com.reyun.solar.engine.oversea:solar-remote-config:+' // Assets/SolarEngineNet/SolarEnginePlugins/RemoteConfigSDK/Android/Editor/Dependencies.xml:4
     // Singular SDK: prefer local AAR if present, otherwise resolve from Maven
-    def singularLocalAars = fileTree(dir: 'libs', include: ['singular_sdk-*.aar', 'singular_sdk.aar']).files
+    def singularLocalAars = fileTree(dir: 'libs', include: ['singular_sdk-*.aar', 'singular_sdk.aar', 'singular*.aar']).files
     if (!singularLocalAars.isEmpty()) {
         singularLocalAars.each { f -> implementation files(f) }
     } else {
-        implementation 'com.singular.sdk:singular_sdk:12.+'
+        // Fallback to Unity bridge jar if Maven artifact unavailable
+        implementation files('libs/SingularUnityBridge-6.11.0.jar')
     }
     implementation 'com.unity3d.ads:unity-ads:4.16.1' // Packages/com.google.ads.mobile.mediation.unity/source/plugin/Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:33
 // Android Resolver Dependencies End

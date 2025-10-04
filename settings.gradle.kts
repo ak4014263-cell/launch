@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://maven.singular.net") }
         maven { url = uri("https://artifact.bytedance.com/repository/pangle/") }
         maven { url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea") }
     // Singular Maven repositories (correct Nexus paths)
