@@ -6,10 +6,10 @@ dependencies {
 
 android {
     namespace "com.all.steal.lemolio"
-    ndkPath "C:/Program Files/Unity Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
+    // ndkPath supplied via local.properties; remove hardcoded path
 
     compileSdkVersion 35
-    buildToolsVersion '34.0.0'
+    // Use AGP default build tools; explicit buildToolsVersion removed
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
