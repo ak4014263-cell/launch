@@ -79,6 +79,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Unity exported library module
+    implementation(project(":unityLibrary"))
 }
 
 

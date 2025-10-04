@@ -38,6 +38,8 @@
             </intent-filter>
         </activity>
 
+        <!-- Unity activity is declared in :unityLibrary manifest and will merge here -->
+
     </application>
 
 </manifest>

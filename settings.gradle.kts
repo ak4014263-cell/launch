@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Launcher"
 include(":app")
+include(":unityLibrary")
+include(":unityLibrary:FirebaseApp.androidlib")
+include(":unityLibrary:GoogleMobileAdsPlugin.androidlib")

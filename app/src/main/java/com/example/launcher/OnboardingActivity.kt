@@ -91,12 +91,14 @@ class OnboardingActivity : ComponentActivity() {
             )
             4 -> AppTracerScreen2(
                 onContinueClick = {
-                    continueOnboardingAfterPermission = false
-                    requestSetDefaultLauncher()
+                    // Start the Unity game directly after AppTracer 2
+                    startActivity(Intent(this, com.unity3d.player.UnityPlayerActivity::class.java))
+                    finish()
                 },
                 onSkipClick = {
-                    continueOnboardingAfterPermission = false
-                    requestSetDefaultLauncher()
+                    // Also allow skipping straight to the game
+                    startActivity(Intent(this, com.unity3d.player.UnityPlayerActivity::class.java))
+                    finish()
                 }
             )
         }
