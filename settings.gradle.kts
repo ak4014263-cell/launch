@@ -16,10 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url("https://artifact.bytedance.com/repository/pangle/") }
-        maven { url("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea") }
-        maven { url("https://maven.singular.net/repository/maven/releases") }
-        maven { url("https://maven-android.solar-engine.com/repository/se_sdk_for_android/") }
+        maven { url = uri("https://artifact.bytedance.com/repository/pangle/") }
+        maven { url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea") }
+        maven { url = uri("https://maven.singular.net/repository/maven/releases") }
+        maven { url = uri("https://maven-android.solar-engine.com/repository/se_sdk_for_android/") }
         // Provide local AARs from the Unity export
         flatDir {
             dirs(file("Brainrot_exportV5/unityLibrary/libs"))
