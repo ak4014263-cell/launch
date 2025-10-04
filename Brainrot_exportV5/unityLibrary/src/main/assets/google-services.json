@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "212055997015",
+    "project_id": "stealbrinrot",
+    "storage_bucket": "stealbrinrot.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212055997015:android:cae6c6ddd4982e3c10c112",
+        "android_client_info": {
+          "package_name": "com.all.steal.lemolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHyN2xy8OizetJimPafVPd-A8AlskJt3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
