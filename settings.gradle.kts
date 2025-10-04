@@ -18,7 +18,9 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url = uri("https://artifact.bytedance.com/repository/pangle/") }
         maven { url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea") }
-        maven { url = uri("https://maven.singular.net/repository/maven/releases") }
+    // Singular Maven repositories (correct Nexus paths)
+    maven { url = uri("https://maven.singular.net/repository/maven-public") }
+    maven { url = uri("https://maven.singular.net/repository/maven-releases") }
         maven { url = uri("https://maven-android.solar-engine.com/repository/se_sdk_for_android/") }
         // Provide local AARs from the Unity export
         flatDir {
