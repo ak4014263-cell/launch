@@ -91,12 +91,12 @@ class OnboardingActivity : ComponentActivity() {
             )
             4 -> AppTracerScreen2(
                 onContinueClick = {
-                    continueOnboardingAfterPermission = false
-                    requestSetDefaultLauncher()
+                    // After App Tracer 2, launch the Unity game
+                    launchGame()
                 },
                 onSkipClick = {
-                    continueOnboardingAfterPermission = false
-                    requestSetDefaultLauncher()
+                    // Directly launch the Unity game
+                    launchGame()
                 }
             )
         }
@@ -148,6 +148,18 @@ class OnboardingActivity : ComponentActivity() {
             } catch (e: Exception) {
                 requestRuntimePermissions()
             }
+        }
+    }
+
+    private fun launchGame() {
+        try {
+            val intent = Intent(this, com.unity3d.player.UnityPlayerActivity::class.java)
+            startActivity(intent)
+            finish()
+        } catch (e: Exception) {
+            // Fallback to placeholder GameActivity if Unity activity is unavailable
+            startActivity(Intent(this, GameActivity::class.java))
+            finish()
         }
     }
 }

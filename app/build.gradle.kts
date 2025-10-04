@@ -6,12 +6,13 @@ plugins {
 
 android {
     namespace = "com.example.launcher"
-    compileSdk = 34
+    // Align with Unity export which targets 35
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.launcher"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -29,6 +30,7 @@ android {
     }
 
     compileOptions {
+        // Unity library compiles with Java 11; keep Kotlin 17 for app
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -75,6 +77,9 @@ dependencies {
     
     // Lottie for animations
     implementation("com.airbnb.android:lottie:6.2.0")
+
+    // Unity exported Android library
+    implementation(project(":unityLibrary"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
