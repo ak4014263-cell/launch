@@ -33,7 +33,8 @@ dependencyResolutionManagement {
             url "https://maven.google.com/" // Packages/com.google.ads.mobile/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:7, Packages/com.google.ads.mobile/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:12, Packages/com.google.ads.mobile/GoogleMobileAds/Editor/GoogleUmpDependencies.xml:7
         }
         maven {
-            url "https://maven.singular.net" // Packages/singular-unity-package/SingularSDK/Editor/SingularSDKDependencies.xml:7
+            // Point to Singular's releases repository explicitly
+            url "https://maven.singular.net/repository/maven-releases" // Packages/singular-unity-package/SingularSDK/Editor/SingularSDKDependencies.xml:7
         }
         maven {
             url "https://dl.google.com/dl/android/maven2/" // Packages/com.google.ads.mobile.mediation.applovin/source/plugin/Assets/GoogleMobileAds/Mediation/AppLovin/Editor/AppLovinMediationDependencies.xml:24, Packages/com.google.ads.mobile.mediation.dtexchange/source/plugin/Assets/GoogleMobileAds/Mediation/DTExchange/Editor/DTExchangeMediationDependencies.xml:24, Packages/com.google.ads.mobile.mediation.inmobi/source/plugin/Assets/GoogleMobileAds/Mediation/InMobi/Editor/InMobiMediationDependencies.xml:24, Packages/com.google.ads.mobile.mediation.metaaudiencenetwork/source/plugin/Assets/GoogleMobileAds/Mediation/MetaAudienceNetwork/Editor/MetaAudienceNetworkMediationDependencies.xml:24, Packages/com.google.ads.mobile.mediation.mintegral/source/plugin/Assets/GoogleMobileAds/Mediation/Mintegral/Editor/MintegralMediationDependencies.xml:25, Packages/com.google.ads.mobile.mediation.pangle/source/plugin/Assets/GoogleMobileAds/Mediation/Pangle/Editor/PangleMediationDependencies.xml:25, Packages/com.google.ads.mobile.mediation.unity/source/plugin/Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:25
