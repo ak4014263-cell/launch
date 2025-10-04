@@ -26,7 +26,13 @@ dependencies {
     // implementation(name: 'firebase-config-unity-11.6.0', ext:'aar') // add if present in libs
     implementation 'com.reyun.solar.engine.oversea:solar-engine-core:+' // Assets/SolarEngineNet/Android/Editor/Dependencies.xml:8
     implementation 'com.reyun.solar.engine.oversea:solar-remote-config:+' // Assets/SolarEngineNet/SolarEnginePlugins/RemoteConfigSDK/Android/Editor/Dependencies.xml:4
-    implementation 'com.singular.sdk:singular_sdk:12.9.1' // Packages/singular-unity-package/SingularSDK/Editor/SingularSDKDependencies.xml:7
+    // Singular SDK: prefer local AAR if present, otherwise resolve from Maven
+    def singularLocalAars = fileTree(dir: 'libs', include: ['singular_sdk-*.aar', 'singular_sdk.aar']).files
+    if (!singularLocalAars.isEmpty()) {
+        singularLocalAars.each { f -> implementation files(f) }
+    } else {
+        implementation 'com.singular.sdk:singular_sdk:12.+'
+    }
     implementation 'com.unity3d.ads:unity-ads:4.16.1' // Packages/com.google.ads.mobile.mediation.unity/source/plugin/Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:33
 // Android Resolver Dependencies End
     implementation(name: 'IngameDebugConsole', ext:'aar')
@@ -53,6 +59,7 @@ android {
     // ndkPath provided by local.properties (sdk.dir/ndk.dir). Remove hardcoded path.
     compileSdkVersion 35
     // Use AGP default build tools; explicit buildToolsVersion removed
+    ndkVersion "23.2.8568313"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -112,6 +119,7 @@ def BuildIl2Cpp(String workingDir, String configuration, String architecture, St
     commandLineArgs.add("--data-folder=" + workingDir + "/src/main/Il2CppOutputProject/Source/il2cppOutput/data")
     commandLineArgs.add("--generatedcppdir=" + workingDir + "/src/main/Il2CppOutputProject/Source/il2cppOutput")
     commandLineArgs.add("--cachedirectory=" + workingDir + "/build/il2cpp_"+ abi + "_" + configuration + "/il2cpp_cache")
+    // Use configured ndkVersion; android.ndkDirectory is provided by AGP when NDK is installed
     commandLineArgs.add("--tool-chain-path=" + android.ndkDirectory)
     staticLibraries.eachWithIndex {fileName, i->
         commandLineArgs.add("--additional-libraries=" + workingDir + "/src/main/jniStaticLibs/" + abi + "/" + fileName)
@@ -153,4 +161,4 @@ android {
 
 
 
-apply from: 'GoogleMobileAdsPlugin.androidlib\\packaging_options.gradle'
+apply from: 'GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'
