@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Arc Launcher Color Palette -->
+    
+    <!-- Primary Colors -->
+    <color name="arc_primary">#6366F1</color>
+    <color name="arc_primary_dark">#4F46E5</color>
+    <color name="arc_primary_light">#8B5CF6</color>
+    
+    <!-- Secondary Colors -->
+    <color name="arc_secondary">#EC4899</color>
+    <color name="arc_secondary_dark">#DB2777</color>
+    <color name="arc_secondary_light">#F472B6</color>
+    
+    <!-- Background Colors -->
+    <color name="arc_background">#0F0F23</color>
+    <color name="arc_surface">#1A1A2E</color>
+    <color name="arc_surface_variant">#16213E</color>
+    
+    <!-- Text Colors -->
+    <color name="arc_on_background">#FFFFFF</color>
+    <color name="arc_on_surface">#E5E7EB</color>
+    <color name="arc_on_surface_variant">#9CA3AF</color>
+    
+    <!-- Accent Colors -->
+    <color name="arc_accent">#10B981</color>
+    <color name="arc_warning">#F59E0B</color>
+    <color name="arc_error">#EF4444</color>
+    
+    <!-- Gradient Colors -->
+    <color name="arc_gradient_start">#6366F1</color>
+    <color name="arc_gradient_end">#EC4899</color>
+    
+    <!-- Card Colors -->
+    <color name="arc_card_background">#1F2937</color>
+    <color name="arc_card_elevated">#374151</color>
+    
+    <!-- System Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

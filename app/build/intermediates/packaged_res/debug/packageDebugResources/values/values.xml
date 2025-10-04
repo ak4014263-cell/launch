@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="arc_accent">#10B981</color>
+    <color name="arc_background">#0F0F23</color>
+    <color name="arc_card_background">#1F2937</color>
+    <color name="arc_card_elevated">#374151</color>
+    <color name="arc_error">#EF4444</color>
+    <color name="arc_gradient_end">#EC4899</color>
+    <color name="arc_gradient_start">#6366F1</color>
+    <color name="arc_on_background">#FFFFFF</color>
+    <color name="arc_on_surface">#E5E7EB</color>
+    <color name="arc_on_surface_variant">#9CA3AF</color>
+    <color name="arc_primary">#6366F1</color>
+    <color name="arc_primary_dark">#4F46E5</color>
+    <color name="arc_primary_light">#8B5CF6</color>
+    <color name="arc_secondary">#EC4899</color>
+    <color name="arc_secondary_dark">#DB2777</color>
+    <color name="arc_secondary_light">#F472B6</color>
+    <color name="arc_surface">#1A1A2E</color>
+    <color name="arc_surface_variant">#16213E</color>
+    <color name="arc_warning">#F59E0B</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <string name="all_apps">All Apps</string>
+    <string name="app_name">Arc Launcher</string>
+    <string name="apps">Apps</string>
+    <string name="home">Home</string>
+    <string name="quick_access">Quick Access</string>
+    <string name="search_hint">Search apps...</string>
+    <string name="settings">Settings</string>
+    <string name="widgets">Widgets</string>
+    <style name="ArcAppIcon">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@drawable/app_icon_background</item>
+    </style>
+    <style name="ArcButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/arc_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+    <style name="ArcButton.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/arc_primary</item>
+        <item name="android:textColor">@color/arc_primary</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+    <style name="ArcCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/arc_card_background</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="Theme.ArcLauncher" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/arc_primary</item>
+        <item name="colorPrimaryVariant">@color/arc_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        
+        <item name="colorSecondary">@color/arc_secondary</item>
+        <item name="colorSecondaryVariant">@color/arc_secondary_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        
+        <item name="android:colorBackground">@color/arc_background</item>
+        <item name="colorSurface">@color/arc_surface</item>
+        <item name="colorOnBackground">@color/arc_on_background</item>
+        <item name="colorOnSurface">@color/arc_on_surface</item>
+        
+        
+        <item name="android:statusBarColor">@color/arc_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        
+        <item name="android:navigationBarColor">@color/arc_background</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        
+        <item name="android:windowBackground">@color/arc_background</item>
+        
+        
+        <item name="android:textColorPrimary">@color/arc_on_background</item>
+        <item name="android:textColorSecondary">@color/arc_on_surface_variant</item>
+    </style>
+    <style name="Theme.ArcLauncher.Launcher" parent="Theme.ArcLauncher">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+com.example.launcher.test.app-annotation-experimental-1.4.0-0 C:\Users\ajayk\.gradle\caches\8.13\transforms\55b11aac843c236ee165df21aa997db7\transformed\annotation-experimental-1.4.0\res
+com.example.launcher.test.app-core-1.5.0-1 C:\Users\ajayk\.gradle\caches\8.13\transforms\d1ff45d9a1dc7579af233be2c0034ed0\transformed\core-1.5.0\res
+com.example.launcher.test.app-androidTest-2 C:\Users\ajayk\AndroidStudioProjects\Launcher\app\build\generated\res\resValues\androidTest\debug
+com.example.launcher.test.app-updated_navigation_xml-3 C:\Users\ajayk\AndroidStudioProjects\Launcher\app\build\generated\updated_navigation_xml\debugAndroidTest
+com.example.launcher.test.app-mergeDebugAndroidTestResources-4 C:\Users\ajayk\AndroidStudioProjects\Launcher\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.launcher.test.app-mergeDebugAndroidTestResources-5 C:\Users\ajayk\AndroidStudioProjects\Launcher\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.launcher.test.app-debugAndroidTest-6 C:\Users\ajayk\AndroidStudioProjects\Launcher\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
