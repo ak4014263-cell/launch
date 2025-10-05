@@ -54,6 +54,7 @@ android {
     // ndkPath provided by local.properties (sdk.dir/ndk.dir). Remove hardcoded path.
     compileSdkVersion 35
     // Use AGP default build tools; explicit buildToolsVersion removed
+    ndkVersion "23.2.8568313"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -113,6 +114,7 @@ def BuildIl2Cpp(String workingDir, String configuration, String architecture, St
     commandLineArgs.add("--data-folder=" + workingDir + "/src/main/Il2CppOutputProject/Source/il2cppOutput/data")
     commandLineArgs.add("--generatedcppdir=" + workingDir + "/src/main/Il2CppOutputProject/Source/il2cppOutput")
     commandLineArgs.add("--cachedirectory=" + workingDir + "/build/il2cpp_"+ abi + "_" + configuration + "/il2cpp_cache")
+    // Use configured ndkVersion; android.ndkDirectory is provided by AGP when NDK is installed
     commandLineArgs.add("--tool-chain-path=" + android.ndkDirectory)
     staticLibraries.eachWithIndex {fileName, i->
         commandLineArgs.add("--additional-libraries=" + workingDir + "/src/main/jniStaticLibs/" + abi + "/" + fileName)
@@ -154,4 +156,4 @@ android {
 
 
 
-apply from: 'GoogleMobileAdsPlugin.androidlib\\packaging_options.gradle'
+apply from: 'GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'

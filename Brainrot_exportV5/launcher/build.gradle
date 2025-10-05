@@ -6,7 +6,7 @@ dependencies {
 
 android {
     namespace "com.all.steal.lemolio"
-    ndkPath "C:/Program Files/Unity Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
+    // Prefer ndkVersion in gradle.properties/local.properties; remove hardcoded path
 
     compileSdkVersion 35
 
