@@ -26,13 +26,8 @@ dependencies {
     // implementation(name: 'firebase-config-unity-11.6.0', ext:'aar') // add if present in libs
     implementation 'com.reyun.solar.engine.oversea:solar-engine-core:+' // Assets/SolarEngineNet/Android/Editor/Dependencies.xml:8
     implementation 'com.reyun.solar.engine.oversea:solar-remote-config:+' // Assets/SolarEngineNet/SolarEnginePlugins/RemoteConfigSDK/Android/Editor/Dependencies.xml:4
-    // Singular SDK: prefer local AAR if present, otherwise resolve from Maven
-    def singularLocalAars = fileTree(dir: 'libs', include: ['singular_sdk-*.aar', 'singular_sdk.aar']).files
-    if (!singularLocalAars.isEmpty()) {
-        singularLocalAars.each { f -> implementation files(f) }
-    } else {
-        implementation 'com.singular.sdk:singular_sdk:12.+'
-    }
+    // Use the correct artifactId and a published version
+    implementation 'com.singular.sdk:singular:12.10.0' // Packages/singular-unity-package/SingularSDK/Editor/SingularSDKDependencies.xml:7
     implementation 'com.unity3d.ads:unity-ads:4.16.1' // Packages/com.google.ads.mobile.mediation.unity/source/plugin/Assets/GoogleMobileAds/Mediation/UnityAds/Editor/UnityMediationDependencies.xml:33
 // Android Resolver Dependencies End
     implementation(name: 'IngameDebugConsole', ext:'aar')

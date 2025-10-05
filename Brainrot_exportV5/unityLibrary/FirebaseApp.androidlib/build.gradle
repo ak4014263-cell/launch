@@ -18,7 +18,6 @@ android {
     }
 
     compileSdkVersion 35
-    // Use AGP default build tools; remove explicit version to silence warning
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 31

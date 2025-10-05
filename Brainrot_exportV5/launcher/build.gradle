@@ -9,8 +9,6 @@ android {
     // Prefer ndkVersion in gradle.properties/local.properties; remove hardcoded path
 
     compileSdkVersion 35
-    ndkVersion "23.2.8568313"
-    // Use AGP default build tools; remove explicit version
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
